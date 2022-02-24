@@ -16,7 +16,7 @@ class CuentaBloc extends Bloc<CuentaEvent, CuentaState> {
 
   void _onCuenta(CuentaEvent event, Emitter emit) async{
     try {
-      Response res = await get(Uri.parse("https://api.sheety.co/d89b0f60f5a721cba13b0538b7530c40/dummyApi/cuentas"));
+      Response res = await get(Uri.parse("https://api.sheety.co/45bbff10f31a1b93c22c6fae997c9cf2/apiT4/cuentas"));
       if(res.statusCode == HttpStatus.ok)
         emit(CuentaSelected(cuentas: jsonDecode(res.body)));
       else
